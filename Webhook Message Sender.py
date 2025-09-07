@@ -1,4 +1,4 @@
-import dhooks
+rimport dhooks
 from dhooks import Webhook
 import colorama
 from colorama import Fore
@@ -9,7 +9,7 @@ from time import sleep
 colorama.init()
 
 def start():
-   print(Fore.RED + '''
+   print(Fore.RED + r'''
 
  __        __   _     _   _             _      __  __                                  ____                 _           
  \ \      / /__| |__ | | | | ___   ___ | | __ |  \/  | ___  ___ ___  __ _  __ _  ___  / ___|  ___ _ __   __| | ___ _ __ 
@@ -33,4 +33,5 @@ def start():
          hook.send(f"{data1}")
 
 start()
+
 
