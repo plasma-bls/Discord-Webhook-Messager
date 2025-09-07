@@ -2,8 +2,11 @@ import dhooks
 from dhooks import Webhook
 import colorama
 from colorama import Fore
-colorama.init()
 import os
+import sys
+import time
+from time import sleep
+colorama.init()
 
 def start():
    print(Fore.RED + '''
@@ -18,18 +21,16 @@ def start():
 
 
    webhook_link = input(Fore.GREEN + "Enter the webhook URL > ")
+   while True:
+      data1 = input(Fore.GREEN + "Messagge (Q to quit) [o]> ")
    
-   data1 = input(Fore.GREEN + "Messagge > ")
-
-   hook = Webhook(webhook_link)
-   hook.send(f"{data1}")
-   
-   c1 = input(Fore.GREEN + "Do you wanna send another message, y|n > ")
-   if c1 == "y":
-      os.system('cls' if os.name == 'nt' else 'clear')
-      start()
-   if c1 == "n":
-      print(Fore.GREEN + "Have a great day!")
-      input(Fore.GREEN + "Press enter to exit > ")
+      hook = Webhook(webhook_link)
+      if data1 == "Q":
+         print(Fore.GREEN + "Have a great day!")
+         time.sleep(2)
+         sys.exit()
+      else:
+         hook.send(f"{data1}")
 
 start()
+
